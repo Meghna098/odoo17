@@ -1,0 +1,13 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+property_management.user,property_management.user,model_property_management,property_management.property_user_access,1,1,0,0
+property_management.manager,property_management.manager,model_property_management,property_management.property_manager_access,1,1,1,1
+
+rental_management.user,rental_management.user,model_rental_management,property_management.property_user_access,1,1,1,1
+rental_management.manager,rental_management.manager,model_rental_management,property_management.property_manager_access,1,1,1,1
+
+property_tag.user,property_tag.user,model_property_tag,property_management.property_user_access,1,1,1,1
+property_tag.manager,property_tag.manager,model_property_tag,property_management.property_manager_access,1,1,1,1
+
+access_property_lines,access.property.lines,model_property_lines,base.group_user,1,1,1,1
+
+access_property_wizard,access.property.wizard,model_property_wizard,base.group_user,1,1,1,1

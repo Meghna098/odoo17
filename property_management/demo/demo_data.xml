@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="property_management1" model="property.management">
+            <field name="name">Lincoln Avenue</field>
+            <field name="legal_amount">10000</field>
+            <field name="rent">500</field>
+        </record>
+        <record id="property_management2" model="property.management">
+            <field name="name">Property 1</field>
+            <field name="legal_amount">50000</field>
+            <field name="rent">1000</field>
+        </record>
+    </data>
+</odoo>

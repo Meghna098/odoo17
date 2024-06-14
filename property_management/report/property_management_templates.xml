@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_property">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h2>Property Report</h2>
+                    <br/>
+                    <table class="table table-sm table-bordered">
+                        <thead>
+                            <tr align="center">
+                                <th colspan="6" class="text-center">Sl.no</th>
+                                <th colspan="6" class="text-center">Property</th>
+                                <th colspan="6" class="text-center">Owner name</th>
+                                <th colspan="6" class="text-center">Type</th>
+                                <th colspan="6" class="text-center">Tenant name</th>
+                                <th colspan="6" class="text-center">Start date</th>
+                                <th colspan="6" class="text-center">End date</th>
+                                <th colspan="6" class="text-center">Rent/Lease Amount</th>
+                                <th colspan="6" class="text-center">State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="docs" t-as="result">
+                                <tr>
+                                    <td colspan="6">
+                                        <span t-esc="i"/>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </td>
+                                    <td colspan="6">
+                                        <span t-esc="result['property']"/>
+                                    </td>
+                                    <td colspan="6">
+                                        <span t-esc="result['owner']"/>
+                                    </td>
+                                    <td colspan="6">
+                                        <span t-esc="result['prop_type']"/>
+                                    </td>
+                                    <td colspan="6">
+                                        <span t-esc="result['tenant']"/>
+                                    </td>
+                                    <td colspan="6">
+                                        <span t-esc="result['start_date']"/>
+                                    </td>
+                                    <td colspan="6">
+                                        <span t-esc="result['end_date']"/>
+                                    </td>
+                                    <td colspan="6">
+                                        <div>
+                                            <t t-if="type== 'lease'">
+                                                <span t-esc="result['legal_amount']"/>
+                                            </t>
+                                            <t t-if="type == 'rent'">
+                                                <span t-esc="result['rent']"/>
+                                            </t>
+                                        </div>
+                                    </td>
+                                    <td colspan="6">
+                                        <span t-esc="result['prop_state']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

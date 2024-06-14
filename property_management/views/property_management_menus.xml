@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem id="property_root" name="Property Management"/>
+    <menuitem id="rental_management_menu" name="Order" parent="property_root"/>
+    <menuitem id="rental_menu_action" parent="rental_management_menu" action="rental_action"/>
+    <menuitem id="property_menu" name="Configuration" parent="property_root" action="property_action"/>
+    <menuitem id="property_menu_action" parent="property_menu" action="property_action"/>
+    <menuitem id="property_tag_menu_action" parent="property_menu" action="property_tag_action" groups="property_management.property_manager_access"/>
+    <menuitem id="property_report_menu" name="Report" parent="property_root"/>
+    <menuitem id="property_report_action" parent="property_report_menu" action="property_wizard_action"/>
+</odoo>

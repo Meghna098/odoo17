@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='banks']" position="after">
+                <group string="Credit Limit">
+                    <field name="active_credit_limit"/>
+                    <div class="content-group" invisible="not active_credit_limit">
+                        <div class="o_row mt16">
+                            <label for="customer_warning_amount"/>
+                            <field name="customer_warning_amount" class="oe_inline"/>
+                        </div>
+                        <div class="o_row mt16">
+                            <label for="customer_blocking_amount"/>
+                            <field name="customer_blocking_amount" class="oe_inline"/>
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
