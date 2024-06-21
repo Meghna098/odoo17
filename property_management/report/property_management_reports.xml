@@ -7,7 +7,7 @@
         <field name="report_name">property_management.report_property</field>
         <field name="report_file">property_management.report_property</field>
         <field name="binding_model_id" ref="property_management.model_rental_management"/>
-       <field name="paperformat_id" ref="property_management.paperformat_property_report" />
+        <field name="paperformat_id" ref="property_management.paperformat_property_report" />
         <field name="binding_type">report</field>
     </record>
 </odoo>

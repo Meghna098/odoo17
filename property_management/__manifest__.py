@@ -21,14 +21,23 @@
         'views/account_move_views.xml',
         'wizard/property_wizard_views.xml',
         'views/property_management_menus.xml',
+
+        'views/website_menus.xml',
+        'views/property_web_template.xml',
+        'views/property_web_details_template.xml',
+        'views/property_new_web_form_template.xml',
+
         'report/property_management_reports.xml',
         'report/property_management_templates.xml',
         'report/paperformat_property_report.xml',
     ],
     'assets': {
             'web.assets_backend': [
-                'property_management/static/src/js/action_manager.js'
-            ]
+                'property_management/static/src/js/action_manager.js',
+            ],
+            'web.assets_frontend': [
+                       'property_management/static/src/css/property_style_sheet.css',
+            ],
     },
     'demo': [
         'demo/demo_data.xml',

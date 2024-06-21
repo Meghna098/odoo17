@@ -6,13 +6,8 @@ from odoo.tools import html_escape
 
 
 class XLSXReportController(http.Controller):
-    """XlsxReport generating controller"""
     @http.route('/xlsx_reports', type='http', auth='user', methods=['POST'], csrf=False)
     def get_report_xlsx(self, model, options, output_format, **kw):
-        """
-        Generate an XLSX report based on the provided data and return it as a
-        response.
-        """
         uid = request.session.uid
         report_obj = request.env[model].with_user(uid)
         options = json.loads(options)
@@ -24,7 +19,7 @@ class XLSXReportController(http.Controller):
                     headers=[
                         ('Content-Type', 'application/vnd.ms-excel'),
                         ('Content-Disposition',
-                         content_disposition('Sale Excel Report' + '.xlsx'))
+                         content_disposition('Property Excel Report' + '.xlsx'))
                     ]
                 )
                 report_obj.get_xlsx_report(options, response)

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <menuitem id="property_root" name="Property Management"/>
     <menuitem id="rental_management_menu" name="Order" parent="property_root"/>

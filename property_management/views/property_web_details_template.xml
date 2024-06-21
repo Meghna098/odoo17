@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="web_details_form_template">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <header class="detail-header">Property details</header>
+                    <t t-foreach="web_details" t-as="property">
+<!--                        <t t-out="property"/>-->
+                        <label class="property-label">Property:</label>
+                        <t class="prop-line" t-esc="property.property_ids"/>
+                        <br/>
+                        <label class="property-label">Type:</label>
+                        <t class="prop-line" t-esc="property.type"/>
+                        <br/>
+                        <label class="property-label">Tenant:</label>
+                        <t class="prop-line" t-esc="property.tenant_id"/>
+                        <br/>
+                        <label class="property-label">Start date:</label>
+                        <t class="prop-line" t-esc="property.start_date"/>
+                        <br/>
+                        <label class="property-label">End date:</label>
+                        <t class="prop-line" t-esc="property.end_date"/>
+                        <br/>
+                        <label class="property-label">Rent/Lease amount:</label>
+                        <t class="prop-line" t-esc="property.rent_lease_amount"/>
+                        <br/>
+                        <label class="property-label">State:</label>
+                        <t class="prop-line" t-esc="property.rent_states"/>
+                    </t>
+            </div>
+        </t>
+    </template>
+</odoo>
