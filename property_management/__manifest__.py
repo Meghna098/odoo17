@@ -26,6 +26,7 @@
         'views/property_web_template.xml',
         'views/property_web_details_template.xml',
         'views/property_new_web_form_template.xml',
+        'views/thank_you_form_template.xml',
 
         'report/property_management_reports.xml',
         'report/property_management_templates.xml',
@@ -36,7 +37,8 @@
                 'property_management/static/src/js/action_manager.js',
             ],
             'web.assets_frontend': [
-                       'property_management/static/src/css/property_style_sheet.css',
+                'property_management/static/src/css/property_style_sheet.css',
+                'property_management/static/src/js/property_action_manager.js'
             ],
     },
     'demo': [

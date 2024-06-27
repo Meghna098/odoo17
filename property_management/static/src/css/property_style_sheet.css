@@ -1,10 +1,37 @@
-input{
+input[type="button"]{
   width: 30%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
-  padding-left: 350px;
+  padding-left: 25px;
+}
+
+.start{
+  width: 16%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  padding-left: 20px;
+}
+
+.end{
+  width: 16%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  padding-left: 20px;
+}
+
+.advanced-select{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  padding-left: 30px;
 }
 
 label {
@@ -12,6 +39,8 @@ label {
   display: inline-block;
   font-weight: bold;
 }
+
+
 
 .btn-submit{
   background-color: #560164;
@@ -24,6 +53,21 @@ label {
   display: inline-block;
   font-size: 20px;
   margin-left: 500px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.btn-create{
+  background-color: #560164;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 100px;
   margin-top: 30px;
   cursor: pointer;
 }
@@ -75,4 +119,14 @@ button{
 .prop-line{
     font-size: 18px;
 
+}
+
+.thank-you{
+    font-size: 50px;
+    padding-left: 700px;
+    padding-top: 500px;
+}
+
+.prop-line >div{
+    display: flex;
 }

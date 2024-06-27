@@ -3,44 +3,50 @@
     <template id="new_web_form_template">
         <t t-call="website.layout">
             <div id="wrap" class="oe_structure oe_empty">
-                <div class="container">
-                    <form action="action_page">
-                        <div>
-                            <div>
-                                <label for="name">Property</label>
-<!--                                <input type="text" id="name" name="property"/>-->
-                                <select name="property" id="property"
-                                        style="width:290px; height:45px"
+                <section class="new-form">
+                    <div>
+                        <form>
+                            <header class="detail-header check-box">Property Form</header>
+                            <div class="prop_div">
+                                <label class="property-label" for="property">Property</label>
+                                <div>
+                                    <t t-foreach='properties' t-as="property">
+                                        <div>
+                                            <input class="property-checks" type="checkbox" name="new_property"
+                                                   data-checked="false"
+                                                   t-att-value='property.id' t-out='property.name'
+                                                   t-att-data-rent="property.rent"
+                                                   t-att-data-lease="property.legal_amount"/>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="prop_div">
+                                <label class="property-label" for="property_type">Type</label>
+                                <select name="prop_type" id="prop_type" style="width:290px; height:45px"
                                         class="advanced-select">
-                                        <t t-foreach='property' t-as="field">
-                                            <option t-esc='field.property' t-att-value="field.id"/>
-                                        </t>
+                                    <option value="rent">Rent</option>
+                                    <option value="lease">Lease</option>
                                 </select>
                             </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="name">Type</label>
-                                <input type="text" id="phone" name="type"/>
+                            <div class="prop_div">
+                                <label class="property-label" for="start_date">Start date</label>
+                                <input class="start" type="date" id="start_date" name="start_date"/>
                             </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="phone">Start date</label>
-                                <input type="phone" id="phone" name="phone"/>
+                            <div class="prop_div">
+                                <label class="property-label" for="end_date">End date</label>
+                                <input class="end" type="date" id="end_date" name="end_date"/>
                             </div>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="email">End date</label>
-                                <input type="email" id="email" name="email"/>
+                            <div class="prop_div">
+                                <label class="property-label" for="amount">Amount</label>
+                                <input type="number" id="amount" name="amount"/>
                             </div>
-                        </div>
-                        <div>
-                            <button class="btn-submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
+                            <div>
+                                <button type="button" class="btn-submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
             </div>
         </t>
     </template>
