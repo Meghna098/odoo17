@@ -26,7 +26,9 @@
         'views/property_web_template.xml',
         'views/property_web_details_template.xml',
         'views/property_new_web_form_template.xml',
+        'views/new_customer.xml',
         'views/thank_you_form_template.xml',
+        'views/property_invoice_template.xml',
 
         'report/property_management_reports.xml',
         'report/property_management_templates.xml',

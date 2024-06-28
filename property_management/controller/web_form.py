@@ -3,7 +3,7 @@ from odoo import Command
 
 
 class WebFormController(Controller):
-    @route('/webform', auth='user', website=True)
+    @route('/webform', auth='public', website=True)
     def web_form(self, **kwargs):
         new_tenant_id = request.env.user.partner_id.id
         property_details = request.env['property.management'].sudo().search([])
@@ -20,14 +20,16 @@ class WebFormController(Controller):
             'web_details': prop_web_details
         })
 
-    @route('/new_form', auth='user', website=True)
+    @route('/new_form', auth='public', website=True)
     def new_web_form(self, **kwargs):
         properties = request.env['property.management'].sudo().search([])
+        tenant_details = request.env['res.partner'].sudo().search([])
         return request.render('property_management.new_web_form_template', {
             'properties': properties,
+            'tenant': tenant_details
         })
 
-    @route('/webform_submit', type='json', auth='user', website=True)
+    @route('/webform_submit', type='json', auth='public', website=True)
     def web_form_submit(self, **post):
         new_property = post.get('properties')
         request.env['rental.management'].sudo().create({
@@ -37,14 +39,24 @@ class WebFormController(Controller):
             'type': post.get('type'),
             'start_date': post.get('start_date'),
             'end_date': post.get('end_date'),
-            'tenant_id': request.env.user.partner_id.id,
+            'tenant_id': post.get('customer'),
             'rent_lease_amount': post.get('rent_lease_amount'),
         })
 
-    @route('/thank_you', type='http', website=True)
+    @route('/new_customer', type='http', auth='public', website=True)
+    def new_customer_form(self):
+        return request.render('property_management.new_customer_template')
+
+    @route('/new_customer_submit', type='http', auth='public', website=True)
+    def new_customer_submit(self, **post):
+        request.env['res.partner'].sudo().create({
+             'name': post.get('cust_name'),
+             'email': post.get('cust_email')
+        })
+        return request.redirect('/new_form')
+
+    @route('/thank_you', type='http', auth='public', website=True)
     def thank_you_form(self):
         return request.render('property_management.thank_you_template')
 
-    # @route('/my/invoices')
-    # def invoice_form(self):
 

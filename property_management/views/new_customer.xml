@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="new_customer_template">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <form action="/new_customer_submit">
+                    <div class="prop_div">
+                        <label class="property-label" for="name">Name</label>
+                        <input type="name" id="name" name="cust_name"/>
+                    </div>
+                    <div class="prop_div">
+                        <label class="property-label" for="email">Email</label>
+                        <input type="email" id="email" name="cust_email"/>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

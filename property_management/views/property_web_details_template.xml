@@ -1,59 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="web_form_template">
+    <template id="web_details_form_template">
         <t t-call="website.layout">
             <div id="wrap" class="oe_structure oe_empty">
-                 <button class="btn-create">
-                    <a t-attf-href="/new_form">Create</a>
-                </button>
-                <table>
-                    <thead>
-                        <tr align="center">
-                            <th colspan="6" class="text-center">Sl.no</th>
-                            <th colspan="6" class="text-center">Property</th>
-                            <th colspan="6" class="text-center">Type</th>
-                            <th colspan="6" class="text-center">Tenant name</th>
-                            <th colspan="6" class="text-center">Start date</th>
-                            <th colspan="6" class="text-center">End date</th>
-                            <th colspan="6" class="text-center">Rent/Lease Amount</th>
-                            <th colspan="6" class="text-center">State</th>
-                            <th colspan="6" class="text-center">Invoices</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-set="i" t-value="1"/>
-                        <t t-foreach="rent_details" t-as="property">
-                            <tr>
-                                <td colspan="6">
-                                    <span t-esc="i"/>
-                                    <t t-set="i" t-value="i+1"/>
-                                </td>
-                                <td colspan="6">
-                                    <span t-esc="property.property_ids"/>
-                                </td>
-                                <td colspan="6">
-                                    <span t-esc="property.type"/>
-                                </td>
-                                <td colspan="6">
-                                    <span t-esc="property.tenant_id.name"/>
-                                </td>
-
-                                <td colspan="6">
-                                    <span t-esc="property.start_date"/>
-                                </td>
-                                <td colspan="6">
-                                    <span t-esc="property.end_date"/>
-                                </td>
-                                <td colspan="6">
-                                    <span t-esc="property.rent_lease_amount"/>
-                                </td>
-                                <td colspan="6">
-                                    <span t-esc="property.rent_states"/>
-                                </td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
+                <header class="detail-header">Property details</header>
+                <t t-foreach="web_details" t-as="property">
+                    <label class="property-label">Property:</label>
+                    <t class="prop-line" t-esc="property.sequence_no"/>
+                    <br/>
+                    <label class="property-label">Type:</label>
+                    <t class="prop-line" t-esc="property.type"/>
+                    <br/>
+                    <label class="property-label">Tenant:</label>
+                    <t class="prop-line" t-esc="property.tenant_id.name"/>
+                    <br/>
+                    <label class="property-label">Start date:</label>
+                    <t class="prop-line" t-esc="property.start_date"/>
+                    <br/>
+                    <label class="property-label">End date:</label>
+                    <t class="prop-line" t-esc="property.end_date"/>
+                    <br/>
+                    <label class="property-label">Rent/Lease amount:</label>
+                    <t class="prop-line" t-esc="property.rent_lease_amount"/>
+                    <br/>
+                    <label class="property-label">State:</label>
+                    <t class="prop-line" t-esc="property.rent_states"/>
+                </t>
             </div>
         </t>
     </template>

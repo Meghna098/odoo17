@@ -3,13 +3,15 @@
     <template id="web_form_template">
         <t t-call="website.layout">
             <div id="wrap" class="oe_structure oe_empty">
-<!--                <t t-out="Details"/>Details-->
+                <button class="btn-create">
+                    <a t-attf-href="/new_form">Create</a>
+                </button>
+                <header class="detail-header">Property details</header>
                 <table>
                     <thead>
                         <tr align="center">
                             <th colspan="6" class="text-center">Sl.no</th>
                             <th colspan="6" class="text-center">Sequence.no</th>
-                            <th colspan="6" class="text-center">Property</th>
                             <th colspan="6" class="text-center">Type</th>
                             <th colspan="6" class="text-center">Tenant name</th>
                             <th colspan="6" class="text-center">Start date</th>
@@ -32,15 +34,11 @@
                                     </a>
                                 </td>
                                 <td colspan="6">
-                                    <span t-esc="property.property_ids"/>
+                                    <span t-esc="dict(property._fields['type'].selection).get(property.type)"/>
                                 </td>
                                 <td colspan="6">
-                                    <span t-esc="property.type"/>
+                                    <span t-esc="property.tenant_id.name"/>
                                 </td>
-                                <td colspan="6">
-                                    <span t-esc="property.tenant_id"/>
-                                </td>
-
                                 <td colspan="6">
                                     <span t-esc="property.start_date"/>
                                 </td>
@@ -51,13 +49,12 @@
                                     <span t-esc="property.rent_lease_amount"/>
                                 </td>
                                 <td colspan="6">
-                                    <span t-esc="property.rent_states"/>
+                                    <span t-esc="dict(property._fields['rent_states'].selection).get(property.rent_states)"/>
                                 </td>
                             </tr>
                         </t>
                     </tbody>
                 </table>
-                <button><a t-attf-href="/new_form">Create</a></button>
             </div>
         </t>
     </template>
