@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="property_snippet_content" name="Property Snippet">
+        <section class="oe_structure container dynamic_snippet_blog">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center py-5">
+                        <h1 class="h1">Properties</h1>
+                        <div class="h3" style="text-align:center">Latest Properties</div>
+                        <div id="courosel">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

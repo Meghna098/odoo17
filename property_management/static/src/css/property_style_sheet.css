@@ -8,7 +8,17 @@ input[type="number"]{
   margin-top: 10px;
 }
 
-.start{
+.name,.email{
+  width: 16%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.start,.end{
   width: 16%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -19,16 +29,10 @@ input[type="number"]{
 }
 
 .end{
-  width: 16%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
   margin-left: 20px;
-  margin-top: 10px;
 }
 
-.advanced-select{
+.advanced-select,.advanced-select-tenant{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -38,13 +42,17 @@ input[type="number"]{
   margin-top: 10px;
 }
 
+.advanced-select-tenant{
+    margin-left: 40px;
+}
+
 .property-label{
   padding-left: 350px;
   display: inline-block;
   font-weight: bold;
 }
 
-.btn-submit{
+.btn-submit,.btn-create,.btn-customer{
   background-color: #560164;
   border: none;
   border-radius: 10px;
@@ -54,24 +62,18 @@ input[type="number"]{
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin-left: 850px;
+  margin-left: 860px;
   margin-top: 30px;
   cursor: pointer;
 }
 
 .btn-create{
-  background-color: #560164;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 10px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
   margin-left: 140px;
-  margin-top: 30px;
-  cursor: pointer;
+}
+
+.btn-customer{
+    margin-top: 10px;
+    margin-left: 830px;
 }
 
 table{
@@ -101,6 +103,7 @@ td {
     font-weight: bold;
     line-height: 1.5;
     padding-left: 700px;
+    display: flex;
 }
 
 .prop-line{
@@ -115,7 +118,7 @@ td {
 }
 
 .prop_div{
-    display: inline;
+    display: flex;
 }
 
 .prop-div{
@@ -125,6 +128,7 @@ td {
 .form-container{
     position: relative;
     margin-left: 100px;
+    margin: auto;
 }
 
 .property-checks{
@@ -132,6 +136,4 @@ td {
   margin-top: 10px;
 }
 
-.form-container{
-    margin: auto;
-}
+

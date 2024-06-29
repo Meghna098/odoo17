@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="basic_snippet" inherit_id="website.snippets" name="Property Snippet">
+        <xpath expr="//div[@id='snippet_effect']//t[@t-snippet][last()]"
+               position="after">
+            <t t-snippet="property_management.property_snippet_content"/>
+        </xpath>
+    </template>
+</odoo>

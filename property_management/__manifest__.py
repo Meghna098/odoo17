@@ -29,6 +29,8 @@
         'views/new_customer.xml',
         'views/thank_you_form_template.xml',
         'views/property_invoice_template.xml',
+        'views/website_snippet.xml',
+        'views/website_snippet_template.xml',
 
         'report/property_management_reports.xml',
         'report/property_management_templates.xml',
@@ -40,7 +42,9 @@
             ],
             'web.assets_frontend': [
                 'property_management/static/src/css/property_style_sheet.css',
-                'property_management/static/src/js/property_action_manager.js'
+                'property_management/static/src/js/property_action_manager.js',
+                'property_management/static/src/js/property_action_snippet.js',
+                'property_management/static/src/xml/property_snippet_templates.xml',
             ],
     },
     'demo': [

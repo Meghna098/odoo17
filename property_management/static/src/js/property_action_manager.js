@@ -40,10 +40,12 @@ publicWidget.registry.propertyWebsiteTypeCustom = publicWidget.Widget.extend({
 
     _onSubmit: async function() {
         var all_properties = this.$el.find('.property-checks');
+        var tenant_input = this.$el.find('#customer').val();
         var type_input = this.$el.find('#prop_type').val();
         var start_date_input = this.$el.find('#start_date').val();
         var end_date_input = this.$el.find('#end_date').val();
         var rent_lease_price = this.$el.find('#amount').val();
+        console.log(tenant_input)
 
         var all_property_list = [];
         for (var key in all_properties) {
@@ -55,13 +57,14 @@ publicWidget.registry.propertyWebsiteTypeCustom = publicWidget.Widget.extend({
 
         let values = {
             'properties': all_property_list,
+            'tenant': tenant_input,
             'type': type_input,
             'start_date': start_date_input,
             'end_date': end_date_input,
             'rent_lease_amount': rent_lease_price
         };
 
-        if (all_property_list.length > 0 && type_input && start_date_input && end_date_input && rent_lease_price) {
+        if (all_property_list.length > 0 && tenant_input && type_input && start_date_input && end_date_input && rent_lease_price) {
             await jsonrpc('/webform_submit', values).then((result) => {
                 window.location.href = '/thank_you';
             });

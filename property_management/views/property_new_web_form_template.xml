@@ -10,25 +10,23 @@
                             <div class="form-container">
                                 <div class="prop-div">
                                     <label class="property-label" for="property">Property</label>
-                                    <div>
-                                        <div class="check-box-group">
-                                            <t t-foreach='properties' t-as="property">
-                                                <input class="property-checks" type="checkbox" name="new_property"
-                                                       data-checked="false"
-                                                       t-att-value='property.id' t-out='property.name'
-                                                       t-att-data-rent="property.rent"
-                                                       t-att-data-lease="property.legal_amount"/>
-                                            </t>
-                                        </div>
+                                    <div class="check-box-group">
+                                        <t t-foreach='properties' t-as="property">
+                                            <input class="property-checks" type="checkbox" name="new_property"
+                                                   data-checked="false"
+                                                   t-att-value='property.id' t-out='property.name'
+                                                   t-att-data-rent="property.rent"
+                                                   t-att-data-lease="property.legal_amount"/>
+                                        </t>
                                     </div>
                                 </div>
                                 <div class="prop_div">
                                     <label class="property-label" for="tenant_details">Tenant</label>
                                     <select name="customer" id="customer" style="width:290px; height:45px"
-                                            class="advanced-select">
+                                            class="advanced-select-tenant">
                                         <option></option>
                                         <t t-foreach='tenant' t-as="rec">
-                                            <option t-out="rec['name']"/>
+                                            <option t-out="rec['name']" t-att-value="rec['id']"/>
                                         </t>
                                     </select>
                                 </div>
@@ -56,7 +54,7 @@
                             <div>
                                 <button type="button" class="btn-submit">Submit</button>
                             </div>
-                            <button>
+                            <button class="btn-customer">
                                 <a t-attf-href="/new_customer">New Customer</a>
                             </button>
                         </form>

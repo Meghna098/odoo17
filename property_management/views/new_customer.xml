@@ -3,19 +3,26 @@
     <template id="new_customer_template">
         <t t-call="website.layout">
             <div id="wrap" class="oe_structure oe_empty">
-                <form action="/new_customer_submit">
-                    <div class="prop_div">
-                        <label class="property-label" for="name">Name</label>
-                        <input type="name" id="name" name="cust_name"/>
-                    </div>
-                    <div class="prop_div">
-                        <label class="property-label" for="email">Email</label>
-                        <input type="email" id="email" name="cust_email"/>
-                    </div>
+                <section class="new-form">
                     <div>
-                        <button type="submit" class="btn-submit">Submit</button>
+                        <form action="/new_customer_submit">
+                            <header class="detail-header check-box">Customer form</header>
+                            <div class="form-container">
+                                <div class="prop_div">
+                                    <label class="property-label" for="name">Name</label>
+                                    <input class='.name' type="text" id="name" name="cust_name"/>
+                                </div>
+                                <div class="prop_div">
+                                    <label class="property-label" for="email">Email</label>
+                                    <input class='email' type="email" id="email" name="cust_email"/>
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn-submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </section>
             </div>
         </t>
     </template>

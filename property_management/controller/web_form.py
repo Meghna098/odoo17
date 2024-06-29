@@ -24,6 +24,7 @@ class WebFormController(Controller):
     def new_web_form(self, **kwargs):
         properties = request.env['property.management'].sudo().search([])
         tenant_details = request.env['res.partner'].sudo().search([])
+        print(tenant_details)
         return request.render('property_management.new_web_form_template', {
             'properties': properties,
             'tenant': tenant_details
@@ -39,7 +40,7 @@ class WebFormController(Controller):
             'type': post.get('type'),
             'start_date': post.get('start_date'),
             'end_date': post.get('end_date'),
-            'tenant_id': post.get('customer'),
+            'tenant_id': post.get('tenant'),
             'rent_lease_amount': post.get('rent_lease_amount'),
         })
 
