@@ -2,6 +2,8 @@
 import PublicWidget from "@web/legacy/js/public/public_widget";
 import { jsonrpc } from "@web/core/network/rpc_service";
 import { renderToElement } from "@web/core/utils/render";
+
+console.log('hii')
 export function _chunk(array, size) {
     const result = [];
     for (let i = 0; i < array.length; i += size) {
@@ -9,23 +11,26 @@ export function _chunk(array, size) {
     }
     return result;
 }
-var LatestProperty = PublicWidget.Widget.extend({
+var LatestProperty = publicWidget.Widget.extend({
     	selector: '.property_snippet_content',
     	willStart: async function() {
-        	var self = this;
-        	await rpc.query({
-            	route: '/latest_properties',
-        	}).then((data) => {
+    	    console.log('fetch latest properties');
+    	    var self = this;
+    	    await jsonrpc('/latest_properties', {}).then((data) => {
             	this.data = data;
+            	console.log('data fetched',this.data);
         	});
     	},
     	start: function() {
+    	    console.log('hii');
         	var chunks = _.chunk(this.data, 4)
         	chunks[0].is_active = true
-        	 refEl.html(renderToElement(property_management.property_snippet_courosel', {
-                'property': chunk
-            }))
-        }
-	PublicWidget.registry.property_snippet_content = LatestProperty;
+        	this.$el.find('#carousel').html(
+            	qweb.render('property_management.property_snippet_carousel', {
+                	chunks
+            	})
+        	)
+    	},
+	publicWidget.registry.property_snippet_content = LatestProperty;
 	return LatestProperty;
 });

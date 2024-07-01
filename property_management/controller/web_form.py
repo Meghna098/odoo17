@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 from odoo.http import request, Controller, route
 from odoo import Command
 
@@ -24,7 +25,6 @@ class WebFormController(Controller):
     def new_web_form(self, **kwargs):
         properties = request.env['property.management'].sudo().search([])
         tenant_details = request.env['res.partner'].sudo().search([])
-        print(tenant_details)
         return request.render('property_management.new_web_form_template', {
             'properties': properties,
             'tenant': tenant_details

@@ -1,7 +1,7 @@
 {
     'name': 'Property Management',
     'version': '1.0',
-    'depends': ['base', 'mail', 'account', 'sale'],
+    'depends': ['base', 'mail', 'account', 'sale', 'website'],
     'author': "New Author",
     'category': 'New Category',
     'description': """
@@ -22,15 +22,15 @@
         'wizard/property_wizard_views.xml',
         'views/property_management_menus.xml',
 
-        'views/website_menus.xml',
         'views/property_web_template.xml',
         'views/property_web_details_template.xml',
         'views/property_new_web_form_template.xml',
         'views/new_customer.xml',
         'views/thank_you_form_template.xml',
         'views/property_invoice_template.xml',
-        'views/website_snippet.xml',
+        'views/website.snippets.xml',
         'views/website_snippet_template.xml',
+        'views/website_menus.xml',
 
         'report/property_management_reports.xml',
         'report/property_management_templates.xml',

@@ -3,7 +3,7 @@
     <template id="basic_snippet" inherit_id="website.snippets" name="Property Snippet">
         <xpath expr="//div[@id='snippet_effect']//t[@t-snippet][last()]"
                position="after">
-            <t t-snippet="property_management.property_snippet_content"/>
+            <t t-snippet="property_management.property_snippet"/>
         </xpath>
     </template>
 </odoo>
