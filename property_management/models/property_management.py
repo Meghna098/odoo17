@@ -30,7 +30,7 @@ class PropertyModel(models.Model):
     def _compute_count(self):
         for record in self:
             record.property_count = self.env['rental.management'].search_count(
-                [('property_ids.property_id', '=', self.name)])
+                [('property_ids.property_id', '=', record.name)])
 
     def action_count(self):
         return {

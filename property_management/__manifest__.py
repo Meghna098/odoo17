@@ -11,6 +11,7 @@
     'data': [
         'security/ir.model.access.csv',
         'security/user_groups.xml',
+
         'data/rental_sequence.xml',
         'data/email_template.xml',
         'data/expiry_scheduler.xml',
@@ -28,9 +29,9 @@
         'views/new_customer.xml',
         'views/thank_you_form_template.xml',
         'views/property_invoice_template.xml',
-        'views/website.snippets.xml',
-        'views/website_snippet_template.xml',
-        'views/website_menus.xml',
+        'views/snippets/website_menus.xml',
+        'views/snippets/website_snippets.xml',
+        'views/snippets/snippet_card_view.xml',
 
         'report/property_management_reports.xml',
         'report/property_management_templates.xml',
@@ -44,7 +45,7 @@
                 'property_management/static/src/css/property_style_sheet.css',
                 'property_management/static/src/js/property_action_manager.js',
                 'property_management/static/src/js/property_action_snippet.js',
-                'property_management/static/src/xml/property_snippet_templates.xml',
+                'property_management/static/src/xml/property_snippet_templates.xml'
             ],
     },
     'demo': [

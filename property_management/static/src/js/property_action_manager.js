@@ -45,7 +45,6 @@ publicWidget.registry.propertyWebsiteTypeCustom = publicWidget.Widget.extend({
         var start_date_input = this.$el.find('#start_date').val();
         var end_date_input = this.$el.find('#end_date').val();
         var rent_lease_price = this.$el.find('#amount').val();
-        console.log(tenant_input)
 
         var all_property_list = [];
         for (var key in all_properties) {
