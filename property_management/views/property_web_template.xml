@@ -7,48 +7,48 @@
                     <a t-attf-href="/new_form">Create</a>
                 </button>
                 <header class="detail-header">Property details</header>
-                <table>
+                <table class="prop-table">
                     <thead>
                         <tr align="center">
-                            <th colspan="6" class="text-center">Sl.no</th>
-                            <th colspan="6" class="text-center">Sequence.no</th>
-                            <th colspan="6" class="text-center">Type</th>
-                            <th colspan="6" class="text-center">Tenant name</th>
-                            <th colspan="6" class="text-center">Start date</th>
-                            <th colspan="6" class="text-center">End date</th>
-                            <th colspan="6" class="text-center">Rent/Lease Amount</th>
-                            <th colspan="6" class="text-center">State</th>
+                            <th colspan="6" class="text-center, prop-th">Sl.no</th>
+                            <th colspan="6" class="text-center, prop-th">Sequence.no</th>
+                            <th colspan="6" class="text-center, prop-th">Type</th>
+                            <th colspan="6" class="text-center, prop-th">Tenant name</th>
+                            <th colspan="6" class="text-center, prop-th">Start date</th>
+                            <th colspan="6" class="text-center, prop-th">End date</th>
+                            <th colspan="6" class="text-center, prop-th">Rent/Lease Amount</th>
+                            <th colspan="6" class="text-center, prop-th">State</th>
                         </tr>
                     </thead>
                     <tbody>
                         <t t-set="i" t-value="1"/>
                         <t t-foreach="rent_details" t-as="property">
                             <tr>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <span t-esc="i"/>
                                     <t t-set="i" t-value="i+1"/>
                                 </td>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <a t-attf-href="/web_details/{{property.id}}">
                                         <span t-esc="property.sequence_no"/>
                                     </a>
                                 </td>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <span t-esc="dict(property._fields['type'].selection).get(property.type)"/>
                                 </td>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <span t-esc="property.tenant_id.name"/>
                                 </td>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <span t-esc="property.start_date"/>
                                 </td>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <span t-esc="property.end_date"/>
                                 </td>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <span t-esc="property.rent_lease_amount"/>
                                 </td>
-                                <td colspan="6">
+                                <td class="prop-td" colspan="6">
                                     <span t-esc="dict(property._fields['rent_states'].selection).get(property.rent_states)"/>
                                 </td>
                             </tr>
