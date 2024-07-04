@@ -5,26 +5,40 @@
             <div id="wrap" class="oe_structure oe_empty">
                 <header class="detail-header">Property details</header>
                 <t t-foreach="web_details" t-as="property">
-                    <label class="property-label">Property:</label>
-                    <t class="prop-line" t-esc="property.sequence_no"/>
+                    <div class="prop_div">
+                        <label class="property-label">Property:</label>
+                        <t t-esc="property.sequence_no"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Type:</label>
-                    <t class="prop-line" t-esc="property.type"/>
+                    <div class="prop_div">
+                        <label class="property-label">Type:</label>
+                        <t t-esc="property.type"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Tenant:</label>
-                    <t class="prop-line" t-esc="property.tenant_id.name"/>
+                    <div class="prop_div">
+                        <label class="property-label">Tenant:</label>
+                        <t t-esc="property.tenant_id.name"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Start date:</label>
-                    <t class="prop-line" t-esc="property.start_date"/>
+                    <div class="prop_div">
+                        <label class="property-label">Start date:</label>
+                        <t t-esc="property.start_date"/>
+                    </div>
                     <br/>
-                    <label class="property-label">End date:</label>
-                    <t class="prop-line" t-esc="property.end_date"/>
+                    <div class="prop_div">
+                        <label class="property-label">End date:</label>
+                        <t t-esc="property.end_date"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Rent/Lease amount:</label>
-                    <t class="prop-line" t-esc="property.rent_lease_amount"/>
+                    <div class="prop_div">
+                        <label class="property-label">Rent/Lease amount:</label>
+                        <t t-esc="property.rent_lease_amount"/>
+                    </div>
                     <br/>
-                    <label class="property-label">State:</label>
-                    <t class="prop-line" t-esc="property.rent_states"/>
+                    <div class="prop_div">
+                        <label class="property-label">State:</label>
+                        <t t-esc="property.rent_states"/>
+                    </div>
                 </t>
             </div>
         </t>

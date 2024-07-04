@@ -5,41 +5,61 @@
             <div id="wrap" class="oe_structure oe_empty">
                 <header class="detail-header">Property details</header>
                 <t t-foreach="property" t-as="property">
-                    <label class="property-label">Property:</label>
-                    <t t-esc="property.name"/>
+                    <div class="prop_div">
+                        <label class="property-label">Property:</label>
+                        <t t-esc="property.name"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Build Date:</label>
-                    <t class="prop-line" t-esc="property.build_date"/>
+                    <div class="prop_div">
+                        <label class="property-label">Owner:</label>
+                        <t t-esc="property.owner_id.name"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Lease amount:</label>
-                    <t class="prop-line" t-esc="property.legal_amount"/>
+                    <div class="prop_div">
+                        <label class="property-label">Build Date:</label>
+                        <t t-esc="property.build_date"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Rent amount:</label>
-                    <t class="prop-line" t-esc="property.rent"/>
+                    <div class="prop_div">
+                        <label class="property-label">Lease amount:</label>
+                        <t t-esc="property.legal_amount"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Owner:</label>
-                    <t class="prop-line" t-esc="property.owner_id.name"/>
+                    <div class="prop_div">
+                        <label class="property-label">Rent amount:</label>
+                        <t t-esc="property.rent"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Address:</label>
-                    <t class="prop-line" t-esc="property.address"/>
+                    <div class="prop_div">
+                        <label class="property-label">Address:</label>
+                        <t t-esc="property.address"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Country:</label>
-                    <t class="prop-line" t-esc="property.country_id.name"/>
+                    <div class="prop_div">
+                        <label class="property-label">Country:</label>
+                        <t t-esc="property.country_id.name"/>
+                    </div>
                     <br/>
-                    <label class="property-label">State:</label>
-                    <t class="prop-line" t-esc="property.state_id.name"/>
+                    <div class="prop_div">
+                        <label class="property-label">State:</label>
+                        <t t-esc="property.state_id.name"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Street:</label>
-                    <t class="prop-line" t-esc="property.street"/>
+                    <div class="prop_div">
+                        <label class="property-label">Description:</label>
+                        <t t-esc="property.description"/>
+                    </div>
                     <br/>
-                     <label class="property-label">Description:</label>
-                    <t class="prop-line" t-esc="property.description"/>
+                    <div class="prop_div">
+                        <label class="property-label">Status:</label>
+                        <t class="prop-line" t-esc="dict(property._fields['status'].selection).get(property.status)"/>
+                    </div>
                     <br/>
-                    <label class="property-label">Status:</label>
-                    <t class="prop-line" t-esc="dict(property._fields['status'].selection).get(property.status)"/>
-                    <label class="property-label">Image:</label>
-                    <img t-attf-src="data:image/png;base64,{{property.image}}"
-                                                 style="padding: 0px; margin: 0px; height: 160px; width:305px;"/>
+                    <div class="prop_div">
+                        <label class="property-label">Image:</label>
+                        <img t-attf-src="data:image/png;base64,{{property.image}}"
+                             style="padding: 0px; margin: 0px; height: 160px; width:305px;"/>
+                    </div>
                 </t>
             </div>
         </t>

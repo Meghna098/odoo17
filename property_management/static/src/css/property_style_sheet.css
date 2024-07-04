@@ -119,6 +119,7 @@ td {
 
 .prop_div{
     display: flex;
+    margin-left: 130px;
 }
 
 .prop-div{
@@ -136,4 +137,16 @@ td {
   margin-top: 10px;
 }
 
+.carousel-control-prev,.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+}
+.carousel-control-prev {
+    left: -50px;
+}
+.carousel-control-next {
+    right: -50px;
+}
 

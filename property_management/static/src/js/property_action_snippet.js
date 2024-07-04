@@ -21,7 +21,6 @@ var LatestProperty = publicWidget.Widget.extend({
     },
     start: function () {
         var chunks = _chunk(this.data, 4);
-        console.log(chunks)
         chunks[0].is_active = true;
         this.$el.find('#carousel').html(
             renderToFragment('property_management.property_snippet_carousel', {

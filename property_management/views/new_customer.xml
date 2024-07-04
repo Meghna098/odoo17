@@ -8,11 +8,11 @@
                         <form action="/new_customer_submit">
                             <header class="detail-header check-box">Customer form</header>
                             <div class="form-container">
-                                <div class="prop_div">
+                                <div class="prop-div">
                                     <label class="property-label" for="name">Name</label>
-                                    <input class='.name' type="text" id="name" name="cust_name"/>
+                                    <input class='name' type="text" id="name" name="cust_name"/>
                                 </div>
-                                <div class="prop_div">
+                                <div class="prop-div">
                                     <label class="property-label" for="email">Email</label>
                                     <input class='email' type="email" id="email" name="cust_email"/>
                                 </div>

@@ -8,9 +8,9 @@ class PropertySnippet(Controller):
         properties = request.env['property.management'].sudo().search_read([], order='create_date desc')
         return properties
 
-    @route('/property_details/<int:id>', auth='public', website=True)
-    def web_details_form(self, id):
-        property_details = request.env['property.management'].sudo().browse(id)
+    @route('/property_details/<int:item_id>', auth='public', website=True)
+    def web_details_form(self, item_id):
+        property_details = request.env['property.management'].sudo().browse(item_id)
         return request.render('property_management.web_snippet_card_details', {
             'property': property_details
         })
